@@ -1,0 +1,113 @@
+.header {
+  height: auto;
+  &__wrap {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+  }
+  &__nav {
+    background-color: #6BD3C3;
+    flex-grow: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    svg {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      line {
+        stroke: #e9eae2;
+        stroke-width: 1.5px;
+      }
+    }
+    svg:not(:root) {
+      overflow: hidden;
+    }
+    &.line {
+      overflow: hidden;
+      &:after {
+        content: '';
+        position: absolute;
+        z-index: 0;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-image: linear-gradient(to top left, transparent calc(50% - 1.5px), #e9eae2, transparent calc(50% + 1.5px) );
+      }
+    }
+  }
+  &__chears{
+    background-color: #E7EBE1;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: 100% 81%;
+    height: 100%;
+    width: 69%;
+    padding-bottom: 40px;
+  }
+  &__address {
+    padding-left: 13%;
+    margin-top: 8%;
+  }
+  &__address p, .header__contact-info {
+    color: #ffffff;
+    font-size: 0.88vw;
+    font-weight: 400;
+    line-height: 0.88vw;
+    text-transform: uppercase;
+  }
+  &__contact-info {
+    padding-left: 29%;
+    margin-bottom: 16%;
+  }
+  @include lg_1920 {
+    height: 50vh;
+    &__address p, .header__contact-info {
+      font-size: 18px;
+      line-height: 1;
+    }
+    &__address {
+      margin-top: 0;
+    }
+    &__contact-info {
+      padding-right: 5%;
+      padding-left: 5%;
+      text-align: right;
+    }
+  }
+  @include lg_1441 {
+    height: auto;
+    &__address {
+      padding-left: 3%;
+      margin-bottom: 30px;
+    }
+    &__nav {
+      height: auto;
+    }
+  }
+  @include md_1190 {
+    &__address p, .header__contact-info {
+      font-size: 16px;
+    }
+  }
+  @include sm_769 {
+    height: auto;
+    &__wrap {
+      flex-direction: column-reverse;
+    }
+    &__contact-info {
+      margin-bottom: 0;
+    }
+    &__chears, &__nav {
+      width: 100%;
+    }
+    &__chears {
+      padding-bottom: 2vh;
+    }
+    &__nav {
+      padding-bottom: 20px;
+    }
+  }
+}

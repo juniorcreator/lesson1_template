@@ -1,0 +1,31 @@
+
+//normalize
+@import "normalize";
+
+//media query
+@import "query/query";
+
+//fonts
+@import "font/font";
+
+//sections
+@import "sections";
+
+//pages
+@import'pages/home';
+
+//UI
+@import'UI/btns';
+
+//base
+@import'base';
+
+//components
+@import'components/footer';
+@import'components/header';
+
+//blocks
+@import'blocks/blocks';
+
+
+
