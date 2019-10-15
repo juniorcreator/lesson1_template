@@ -110,7 +110,7 @@
         top: -4px;
         width: 38px;
         height: 30px;
-        background-image: url("../img/arrow_icon.png");
+        background-image: url(../img/arrow_icon.png);
         transition: opacity .3s ease-in-out;
         opacity: 0;
         visibility: hidden;
@@ -195,8 +195,7 @@
   &.p-2 {
     height: auto;
     background-color: #dfe0d9;
-    //background-image: url('resources/img/p2.png');
-
+    background-image: url(../img/p2.png);
     .product__content {
       max-width: 50%;
       flex-direction: column;
@@ -208,8 +207,7 @@
   &.p-3 {
     height: 25vw;
     background-color: #E7EBE1;
-    //background-image: url('resources/img/p3.png');
-
+    background-image: url(../img/p3.png);
     .product__content {
       align-items: flex-end;
       justify-content: space-between;
@@ -220,7 +218,7 @@
     width: 25%;
     height: 30vw;
     background-color: #63737E;
-    //background-image: url('resources/img/p4.png');
+    background-image: url(../img/p4.png);
     background-size: cover;
     .product__content {
       height: 50%;
@@ -234,7 +232,7 @@
     width: 75%;
     height: 30vw;
     background-color: #E9E9E9;
-    //background-image: url('resources/img/p5.png');
+    background-image: url(../img/p5.png);
     .product__content {
       justify-content: flex-end;
       padding-right: 7%;
@@ -265,7 +263,7 @@
     background-size: 73%;
     background-position: 50% 15%;
     background-color: #fff;
-    background-image: url('./../../resources/img/p7.png');
+    background-image: url(../img/p7.png);
     .product__content {
       max-width: 85%;
       margin: 0 auto;
@@ -278,7 +276,7 @@
     display: flex;
     padding: 3% 30px;
     background-color: #fff;
-    //background-image: url('resources/img/product9.png');
+    background-image: url(../img/product9.png);
     width: 30%;
     height: 21vw;
     background-size: cover;
@@ -339,7 +337,7 @@
       position: absolute;
       left: 0;
       top: 0;
-      background-image: url("../icons/arrow_icon2.png");
+      background-image: url(../img/arrow_icon2.png);
       background-repeat: no-repeat;
       width: 38px;
       height: 38px;

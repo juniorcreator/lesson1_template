@@ -7,22 +7,21 @@ function docReady(fn) {
     document.addEventListener("DOMContentLoaded", fn);
   }
 }
+
 const checkExistingDoom = element => {
   let el =  document.querySelector(element);
   return !!el;
 };
 
 const initMap = () => {
-
   if(checkExistingDoom('#map')) {
     let map, marker;
     let icon = {
-      url: "resources/img/map.png", // url
+      url: "public/img/map.png", // url
       scaledSize: new google.maps.Size(45, 60),
       origin: new google.maps.Point(0,0),
       anchor: new google.maps.Point(0, 0)
     };
-    //49.431602, 32.056893
     map = new google.maps.Map(document.getElementById('map'), {
       center: {lat: 49.431602, lng: 32.056893 },
       zoom: 15,
@@ -88,6 +87,5 @@ const initMap = () => {
     });
   }
 };
-
 
 docReady(initMap);
