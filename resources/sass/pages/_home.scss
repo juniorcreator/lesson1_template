@@ -46,6 +46,7 @@
     .divided-block {
       &__time-line {
         font-size: 20px;
+        padding-left: 12px;
       }
     }
   }
@@ -65,11 +66,11 @@
       height: auto !important;
       min-height: 26vw;
     }
+    .divided-block.time-line {
+      height: 25vw;
+    }
   }
   @include sm_769 {
-    .divided-block {
-      width: 100%;
-    }
     &__row {
       flex-direction: column;
     }
@@ -78,6 +79,12 @@
     }
     &__item {
       width: 100%;
+    }
+    .divided-block {
+      width: 100%;
+      &.time-line {
+        height: auto;
+      }
     }
   }
   @include xs_540 {
@@ -162,6 +169,14 @@
       line-height: 16px;
     }
   }
+  @include sm_769 {
+    li a {
+      &:before {
+        width: 15px;
+        height: 15px;
+      }
+    }
+  }
 }
 
 .product {
@@ -177,12 +192,20 @@
     display: flex;
     height: 100%;
   }
-
+  &.p-1,&.p-2,&.p-3,&.p-4,&.p-5,&.p-6,&.p-7,&.p-8 {
+    .product__content {
+      height: auto;
+      padding: 0 10px;
+      flex-direction: row;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+    }
+  }
   &.p-1 {
     background-color: #fff;
     width: 60%;
     height: 28vw;
-
+    background-image: url(../img/p1.png);
     .product__content {
       height: 100%;
       flex-direction: column;
@@ -203,7 +226,6 @@
       align-items: center;
     }
   }
-
   &.p-3 {
     height: 25vw;
     background-color: #E7EBE1;
@@ -213,7 +235,6 @@
       justify-content: space-between;
     }
   }
-
   &.p-4 {
     width: 25%;
     height: 30vw;
@@ -226,8 +247,18 @@
       justify-content: space-between;
       flex-direction: column;
     }
+    .like {
+      &__heart i {
+        color: #fff;
+      }
+    }
+    .product__title,
+    .product__prop,
+    .product__prop span,
+    .product__btn {
+      color: #fff;
+    }
   }
-
   &.p-5 {
     width: 75%;
     height: 30vw;
@@ -239,7 +270,6 @@
       padding-top: 10%;
     }
   }
-
   &.p-6 {
     display: flex;
     background-color: #fff;
@@ -256,9 +286,10 @@
       margin-right: 8%;
     }
   }
-
   &.p-7 {
-    width: 70%;
+    display: flex;
+    align-items: flex-end;
+    width: 45%;
     height: 21vw;
     background-size: 73%;
     background-position: 50% 15%;
@@ -266,18 +297,18 @@
     background-image: url(../img/p7.png);
     .product__content {
       max-width: 85%;
+      width: 100%;
       margin: 0 auto;
-      align-items: flex-end;
+      align-items: center;
       justify-content: space-around;
     }
   }
-
   &.p-8 {
     display: flex;
     padding: 3% 30px;
     background-color: #fff;
     background-image: url(../img/product9.png);
-    width: 30%;
+    width: 24%;
     height: 21vw;
     background-size: cover;
     .product__content {
@@ -288,39 +319,32 @@
       align-items: center;
     }
   }
-
   &__text {
 
   }
-
   &__descript {
     margin-bottom: 0.9vw;
     font-size: 0.8vw;
     font-weight: 300;
   }
-
   &__title {
     font-size: 1.63vw;
     font-weight: 300;
     line-height: 1;
     margin-bottom: 1.3vw;
   }
-
   &__prop {
     font-size: 0.83vw;
     line-height: 0.83vw;
     text-transform: uppercase;
     font-weight: bold;
-
     span {
       font-weight: 300;
     }
   }
-
   &__subtitle {
 
   }
-
   &__btn {
     margin-bottom: 0.6vw;
     margin-right: 0.4vw;
@@ -331,7 +355,6 @@
     line-height: 1;
     text-transform: uppercase;
     transition: all .3s ease-in-out;
-
     &:before {
       content: '';
       position: absolute;
@@ -344,7 +367,6 @@
       background-size: contain;
       transition: all .3s ease-in-out;
     }
-
     &:hover {
       color: #EAB736;
 
@@ -353,7 +375,6 @@
       }
     }
   }
-
   @include lg_1920 {
     &__btn {
       padding-left: 35px;
@@ -385,6 +406,14 @@
     }
   }
   @include md_1190 {
+    &.p-4 {
+      .product__content {
+        padding: 0;
+      }
+    }
+    &.p-7, &.p-8 {
+      height: 25vw;
+    }
     &__prop {
       font-size: 13px;
     }
@@ -394,19 +423,19 @@
   }
   @include sm_769 {
     width: 100% !important;
-  }
-  &.p-1,&.p-2,&.p-3,&.p-4,&.p-5,&.p-6,&.p-7,&.p-8{
-    .product__content {
+    border-bottom: 1px solid #000;
+    &.p-4 {
+      background-size: contain;
+    }
+    &.p-8 .product__content {
+      max-width: 300px;
+      width: 100%;
+    }
+    &.p-7, &.p-8 {
       height: auto;
-      padding: 0 10px;
-      flex-direction: row;
-      justify-content: flex-start;
-      flex-wrap: wrap;
     }
   }
-  &.p-4 {
-    background-size: contain;
-  }
+
   .product__content {
     height: auto;
   }
@@ -433,14 +462,15 @@
   }
 
   &__right {
-    max-width: 49.9%;
+    max-width: 55.9%;
+    width: 100%;
     display: flex;
     margin: 4vw auto 4vw auto;
   }
 
   &__descript {
     margin-right: 3%;
-    max-width: 690px;
+    max-width: 725px;
     width: 100%;
 
     > h3, p {
@@ -506,34 +536,43 @@
 
   @include lg_1920 {
     .divided-block {
-      width: 24.16%;
-      height: 56vh;
+      width: 26.16%;
+      height: 27vw;
       min-height: initial;
       max-width: initial;
-
       &__title {
         font-size: 43px;
       }
-
       &:after {
         background-image: linear-gradient(to top left, transparent calc(50% - 1.5px), #fff, transparent calc(50% + 1.5px));
       }
     }
     &__right {
-      margin: 3vw auto 3vw auto;
+      margin: 3vw auto 3vw 5vw;
       max-width: 60.9%;
     }
     &__descript {
+      max-width: 440px;
       > h3, > p {
         line-height: 21px;
         font-size: 21px;
         margin-bottom: 15px;
       }
     }
-    &__awards-wrap {
-      p {
+    &__office {
+      max-width: 475px;
+    }
+    &__awards {
+      > p {
         font-size: 21px;
         line-height: 21px;
+        margin-bottom: 1.5vw;
+      }
+    }
+    &__awards-wrap {
+     > p {
+       font-size: 19px;
+       line-height: 19px;
         margin-bottom: 1.8vw;
       }
     }
@@ -551,8 +590,8 @@
       width: 100%;
 
       > h3, p {
-        font-size: 25px;
-        margin-bottom: 20px;
+        font-size: 19px;
+        margin-bottom: 15px;
       }
     }
     &__awards-wrap {
@@ -564,7 +603,7 @@
       max-width: initial;
     }
     .divided-block {
-      height: 400px;
+      height: 350px;
       min-height: initial;
       margin-right: 0;
       min-width: 300px;
@@ -651,8 +690,8 @@
 
   @include lg_1920 {
     .divided-block {
-      width: 24.16%;
-      height: 56vh;
+      width: 26.16%;
+      height: 27vw;
       min-height: initial;
       max-width: initial;
 
@@ -667,7 +706,7 @@
   }
   @include lg_1441 {
     .divided-block {
-      height: 400px;
+      height: 350px;
       min-height: initial;
       margin-right: 10px;
       min-width: 300px;
@@ -713,8 +752,10 @@
 .news-item {
   width: calc(50% - 60px);
   margin: 30px;
-
+  display: flex;
+  flex-direction: column;
   &__title {
+    flex-grow: 1;
     font-size: 48px;
     font-weight: 700;
     line-height: 48px;
@@ -745,6 +786,8 @@
   }
 
   &__text {
+    max-height: 140px;
+    overflow: hidden;
     color: #6a6969;
     font-size: 24px;
     font-weight: 400;
@@ -798,10 +841,10 @@
     width: calc(50% - 30px);
     margin: 15px;
     &__title {
-      font-size: 26px;
+      font-size: 22px;
     }
     &__text {
-      font-size: 20px;
+      font-size: 18px;
       margin-bottom: 5px;
     }
     &__link {
@@ -825,6 +868,10 @@
     &__title {
       font-size: 22px;
     }
+    &__link {
+      font-size: 16px;
+      line-height: 16px;
+    }
   }
 }
 
@@ -832,6 +879,9 @@
 .s-staff {
   margin-bottom: 102px;
   overflow: hidden;
+  @include md_1190 {
+    margin-bottom: 30px;
+  }
   @include sm_769 {
     padding: 0 15px 40px 15px;
     margin-bottom: 0;
@@ -889,14 +939,14 @@
     &__describe {
       max-width: 400px;
     }
+    &__team {
+      margin: 0;
+    }
   }
   @include md_1190 {
     max-width: 99%;
-    &__team {
-      margin: 0 -15px;
-    }
     &__describe {
-      margin-right: 0;
+      margin-right: 15px;
     }
   }
   @include sm_769 {
